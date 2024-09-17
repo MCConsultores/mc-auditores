@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Consultores Auditores & Abogados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden; /* Evita el desplazamiento horizontal */
+        }
+
+        #logo {
+            width: 100px;
+            height: auto;
+            margin: 10px;
+            float: left;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin: 0;
+            padding: 30px 0;
+            font-family: 'Century Gothic', 'Segoe UI', sans-serif; /* Fuente del título */
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .button {
+            width: 90%;
+            max-width: 300px;
+            padding: 15px;
+            font-size: 1em;
+            background-color: #198cff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #0a82fa;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .search-bar {
+            width: 90%;
+            max-width: 400px;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px 0;
+            border: 2px solid #0b85ff;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .search-bar:focus {
+            border-color: #0180ff;
+            outline: none;
+        }
+
+        #item-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #item-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #345cac;
+        }
+
+        #item-list a {
+            color: #0281ff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        #item-list a:hover {
+            color: #0080ff;
+        }
+
+        #large-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Fondo para la sección inicial */
+        #initial-section {
+            background-image: url('logo6.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Fondo para la sección de tipos de crédito */
+        #btn-credit-types-section {
+            background-image: url('blanco.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Fondo para la sección de gastos deducibles */
+        #btns-expenses {
+            background-image: url('fondo-gastos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Fondo para la sección de listado */
+        #list-section {
+            background-image: url('fondo-listado.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Fondo para la sección de imagen */
+        #image-viewer {
+            background-image: url('fondo-imagen.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Media Queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            .button {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+
+            .search-bar {
+                max-width: 90%;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1em;
+            }
+
+            .button {
+                padding: 10px;
+                font-size: 0.8em;
+            }
+
+            .search-bar {
+                max-width: 100%;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+</head>
+<body>
+    <!-- Logo a la izquierda -->
+    <img src="logomc.jpeg" alt="Logo" id="logo">
+    <h1>MC CONSULTORES AUDITORES & ABOGADOS</h1>
+    
+    <!-- Sección inicial: Requisitos para Crédito Fiscal o Documentos de Gastos Deducibles -->
+    <div id="initial-section" class="button-container">
+        <button id="btn-credit" class="button">Prevención ajustes IVA (Requisitos para Crédito Fiscal)</button>
+        <button id="btn-expenses" class="button">Prevención Ajustes ISR (Documentos o Requisitos para Soporte de Gastos Deducibles)</button>
+    </div>
+
+    <!-- Botón intermedio para Crédito Fiscal -->
+    <div id="btn-credit-types-section" class="button-container hidden">
+        <button id="btn-credit-types" class="button">Tipos de Crédito Fiscal</button>
+        <button id="btn-back-home-1" class="button">Regresar a la Página Principal</button>
+    </div>
+
+    <!-- Botones para Gastos Deducibles -->
+    <div id="btns-expenses" class="button-container hidden">
+        <button id="btn-expense-1" class="button">Tipo de Gastos (Art. 21 Decreto 10-2012)</button>
+        <button id="btn-expense-2" class="button">Documentos Especial para Siguientes Sección Art. 17 Decreto 10-2012 y 14 Reglamento</button>
+        <button id="btn-back-home-2" class="button">Regresar a la Página Principal</button>
+    </div>
+   
+    <!-- Listado con buscador -->
+    <div id="list-section" class="hidden">
+        <div class="button-container">
+            <button id="btn-back-home-3" class="button">Regresar a la Página Principal</button>
+            <button id="btn-back-to-previous-page" class="button hidden">Regresar a la Página Anterior</button>
+            <input type="text" id="search" class="search-bar" onkeyup="filterList()" placeholder="Buscar en el listado...">
+        </div>
+        <ul id="item-list">
+            <!-- Este listado se llenará dinámicamente -->
+        </ul>
+    </div>
+
+    <!-- Sección de imagen abierta -->
+    <div id="image-viewer" class="hidden">
+        <button id="btn-back-to-list-image" class="button">Regresar al Listado</button>
+        <img id="large-image" src="" alt="Imagen Grande">
+    </div>
+
+    <script>
+        let previousPage = null;
+
+        function hideInitialButtons() {
+            document.getElementById("initial-section").classList.add("hidden");
+        }
+
+        document.getElementById("btn-credit").addEventListener("click", function() {
+            hideInitialButtons();
+            previousPage = 'initial';
+            document.getElementById("btn-credit-types-section").classList.remove("hidden");
+        });
+
+        document.getElementById("btn-credit-types").addEventListener("click", function() {
+            loadList('credito');
+            document.getElementById("list-section").classList.remove("hidden");
+            document.getElementById("btn-credit-types-section").classList.add("hidden");
+            document.getElementById("btn-back-to-previous-page").classList.remove("hidden");
+            previousPage = 'credit'; // Actualizamos previousPage aquí
+        });
+
+        document.getElementById("btn-expenses").addEventListener("click", function() {
+            hideInitialButtons();
+            previousPage = 'initial';
+            document.getElementById("btns-expenses").classList.remove("hidden");
+        });
+
+        document.getElementById("btn-expense-1").addEventListener("click", function() {
+            document.getElementById("btns-expenses").classList.add("hidden");
+            previousPage = 'expenses';
+            loadList('gasto1');
+            document.getElementById("list-section").classList.remove("hidden");
+            document.getElementById("btn-back-to-previous-page").classList.remove("hidden");
+        });
+
+        document.getElementById("btn-expense-2").addEventListener("click", function() {
+            document.getElementById("btns-expenses").classList.add("hidden");
+            previousPage = 'expenses';
+            loadList('gasto2');
+            document.getElementById("list-section").classList.remove("hidden");
+            document.getElementById("btn-back-to-previous-page").classList.remove("hidden");
+        });
+
+        document.getElementById("btn-back-home-1").addEventListener("click", function() {
+            document.getElementById("btn-credit-types-section").classList.add("hidden");
+            document.getElementById("initial-section").classList.remove("hidden");
+        });
+
+        document.getElementById("btn-back-home-2").addEventListener("click", function() {
+            document.getElementById("btns-expenses").classList.add("hidden");
+            document.getElementById("initial-section").classList.remove("hidden");
+        });
+
+        document.getElementById("btn-back-home-3").addEventListener("click", function() {
+            document.getElementById("list-section").classList.add("hidden");
+            document.getElementById("initial-section").classList.remove("hidden");
+        });
+
+        document.getElementById("btn-back-to-previous-page").addEventListener("click", function() {
+            document.getElementById("list-section").classList.add("hidden");
+            if (previousPage === 'credit') {
+                document.getElementById("btn-credit-types-section").classList.remove("hidden");
+            } else if (previousPage === 'expenses') {
+                document.getElementById("btns-expenses").classList.remove("hidden");
+            }
+            document.getElementById("btn-back-to-previous-page").classList.add("hidden");
+        });
+
+        document.getElementById("btn-back-to-list-image").addEventListener("click", function() {
+            document.getElementById("image-viewer").classList.add("hidden");
+            document.getElementById("list-section").classList.remove("hidden");
+        });
+        function loadList(type) {
+            const itemList = document.getElementById('item-list');
+            itemList.innerHTML = '';
+            const items = {
+                'credito': [
+                    { text: 'Costo de producción varios', href: 'Costo de producción varios.jpeg' },
+                    { text: 'Bienes de capital o Activos fijos varios', href: 'Bienes de capital o Activos fijos varios.jpeg' },
+                    { text: 'Transporte y combustible', href: 'Transporte y combustible.jpeg' },
+                    { text: 'Importaciones', href: 'Importaciones.jpeg' },
+                    { text: 'Gasto en mantenimiento y construcción', href: 'Gasto en mantenimiento y construcción.jpeg' },
+                    { text: 'Compra de bienes inmuebles vinculados a actividad económica', href: 'Compra de bienes inmuebles vinculados a actividad económica.jpeg' },
+                    { text: 'Primas de seguro de vida y médicos a favor de los trabajadores', href: 'Primas de seguro de vida y médicos a favor de los trabajadores.jpeg' },
+                    { text: 'Primas de seguro de daños, incendio, etc.', href: 'Primas de seguro de daños, incendio, etc..jpeg' },
+                    { text: 'Seguros de vehículos de transporte, maquinaria y equipo, instalaciones y mercaderías', href: 'Seguros de vehículos de transporte, maquinaria y equipo, instalaciones y mercaderías.jpeg' },
+                    { text: 'Arrendamientos de inmuebles', href: 'Arrendamientos de inmuebles.jpeg' },
+                    { text: 'Arrendamientos de vehículos de transporte de carga, maquinaria, equipo para producción', href: 'Arrendamientos de vehículos de transporte de carga, maquinaria, equipo para producción.jpeg' },
+                    { text: 'Servicios de internet o telecomunicaciones en áreas de producción, almacenamiento y transporte de producctos', href: 'Servicios de internet o telecomunicaciones en áreas de producción, almacenamiento y transporte de producctos.jpeg' },
+                    { text: 'Pago de intereses por capitales de trabajo', href: 'Pago de intereses por capitales de trabajo.png' },
+                    { text: 'Instalación de aire acondicionado y de alarmas, en áreas de producción y almacenamiento', href: 'Instalación de aire acondicionado y de alarmas, en áreas de producción y almacenamiento.png' },
+                    { text: 'Servicios profesionales', href: 'Servicios profesionales.png' },
+                    { text: 'Servicios técnicos', href: 'Servicios técnicos.png' },
+                    { text: 'Servicios de Asesoría', href: 'Servicios de Asesoría.png' },
+                    { text: 'Gastos generales o de venta', href: 'Gastos generales o de venta.png' },
+                    { text: 'Bienes de servicios para empresas de call center y contacto', href: 'Bienes de servicios para empresas de call center y contacto.png' },
+                    { text: 'Bienes o servicios para empresas de tecnología de información', href: 'Bienes o servicios para empresas de tecnología de información.png' },
+                    { text: 'Servicios de publicidad', href: 'Servicios de publicidad.png' },
+                    { text: 'REQUISITOS PARA CRÉDITO FISCAL', href: 'REQUISITOS PARA CRÉDITO FISCAL.jpeg' },
+                    
+                ],
+                'gasto1': [
+                    { text: 'Costo de producción', href: 'Costo de producción.jpeg' },
+                    { text: 'Gastos de prestación de servicios', href: 'Gastos de prestación de servicios.jpeg' },
+                    { text: 'Gastos de transporte y combustible', href: 'Gastos de transporte y combustible.jpeg' },
+                    { text: 'Sueldos, salarios, aguinaldos, bonificaciones, comisiones, comisiones, gratificaciones, dietas y otros', href: 'Sueldos, salarios, aguinaldos, bonificaciones, comisiones, comisiones, gratificaciones, dietas y otros.jpeg' },
+                    { text: 'Bono 14 y aguinaldo', href: 'Bono 14 y aguinaldo.jpeg' },
+                    { text: 'Cuotas patronales de IGSS, IRTRA, INTECAP', href: 'Cuotas patronales de IGSS, IRTRA, INTECAP.jpeg' },
+                    { text: 'Asignaciones patronales por jubilaciones, pensiones y primas por planes de prevensión social (seguros de retiro, pensiones, seguros médicos) conforme planes colectivos en beneficio de los trabajadores y autorizados por autoridad competente', href: 'error.jpeg' },
+                    { text: 'Indemnización pagadas o reservas por indemnización (8.33% del total)', href: 'Indemnización pagadas o reservas por indemnización (8.33% del total).png' },
+                    { text: 'Gasto en mantenimiento y construcción de escuelas, hospitales, clínicas, en beneficio gratuito para trabajadores de la persona jurídica', href: 'Gasto en mantenimiento y construcción de escuelas, hospitales, clínicas, en beneficio gratuito para trabajadores de la persona jurídica.png' },
+                    { text: 'Valor de tierra laborable (matrícula) adjudicada gratuitamente a los trabajadores. Debe ser inscrita en el Registro de la Propiedad', href: 'Valor de tierra laborable (matrícula) adjudicada gratuitamente a los trabajadores. Debe ser inscrita en el Registro de la Propiedad.png' },
+                    { text: 'Primas de seguros de vida -no dotales- y primas de seguros de vida y médicos a favor de los trabajadores', href: 'Primas de seguros de vida -no dotales- y primas de seguros de vida y médicos a favor de los trabajadores.png' },
+                    { text: 'Primas de seguro de daños, incendio, robo sobre bienes que producen renta gravada', href: 'Primas de seguro de daños, incendio, robo sobre bienes que producen renta gravada.png' },
+                    { text: 'Arrendamientos para la producción de renta gravada', href: 'Arrendamientos para la producción de renta gravada.png' },
+                    { text: 'Mejoras en bienes arrendados que no son compensadas y que no son propiedad del arrendamiento: en el plazo del arrendamiento', href: 'error2.png' },
+                    { text: 'Mejoras propiedad de arrendamientos, para depreciar el plazo del contracto', href: 'Mejoras propiedad de arrendamientos, para depreciar el plazo del contracto.png' },
+                    { text: 'Impuestos, tasas, contribuciones especiales, arbitrios municipales, pagados por el contribuyente', href: 'Impuestos, tasas, contribuciones especiales, arbitrios municipales, pagados por el contribuyente.jpeg' },
+                    { text: 'Intereses originados de actividades generadoras de rentas', href: 'Impuestos, tasas, contribuciones especiales, arbitrios municipales, pagados por el contribuyente.png' },
+                    { text: 'Donaciones que puedan comprobarse fechasimiento', href: 'Donaciones que puedan comprobarse fechasimiento.png' },
+                    { text: 'Honorarios, comisiones o pagos por servicios profesionales', href: 'Honorarios, comisiones o pagos por servicios profesionales.png' },
+                    { text: 'Honorarios, comisiones o pagos por asesoramiento técnico, financiero o de otra índole', href: 'Honorarios, comisiones o pagos por asesoramiento técnico, financiero o de otra índole.png' },
+                    { text: 'Viáticos comprobables', href: 'Viáticos comprobables.png' },
+                    { text: 'Regalías (máximo 5%)', href: 'Regalías (náximo 5%).png' },
+                    { text: 'Gastos de promoción publicidad y propaganda en medios masivos de comunicación (vallas, radios, prensa escrita, televisión)', href: 'Gastos de promoción publicidad y propaganda en medios masivos de comunicación (vallas, radios, prensa escrita, televisión).png' },
+                    { text: 'Gastos de organización (amortización en 5 años)', href: 'Gastos de organización (amortización en 5 años).png' },
+                    { text: 'Pérdidas cambiarias', href: 'Pérdidas cambiarias.png' },
+                    { text: 'Gastos generales o de venta', href: 'Gastos generales o de venta1.png' },
+
+                ],
+                'gasto2': [
+                    { text: 'Rotura o daño de bienes', href: 'Rotura o daño de bienes.jpeg' },
+                    { text: 'Evaporación o deshidratación por causas naturales', href: 'Evaporación o deshiddratación por causas naturales.jpeg' },
+                    { text: 'Descomposición o destrucción de bienes', href: 'Descomposición o destrucción de bienes.jpeg' },
+                    { text: 'Bienes dañados por fuerza mayor o caso fortuito', href: 'Bienes dañados por fuerza mayor o caso fortuito.jpeg' },
+                    { text: 'Bienes robados o hurtados', href: 'Bienes robados o hurtados.jpeg' },
+                ],
+                'gasto3': [
+                { text: 'Gastos de mantenimiento y los de reparación que conserven bienes de funcionamiento (que no sean mejoras permanentes, ni aumenten vida útil o capacidad de producción)', href: 'Gastos de mantenimiento y los de reparación que conserven bienes de funcionamiento (que no sean mejoras permanentes, ni aumenten vida útil o capacidad de producción).jpeg' },
+                    { text: 'Depreciaciones y amortizaciones x1', href: 'Depreciaciones y amortizaciones x1.jpeg' },
+                    { text: 'Cuentas incobrables', href: 'Cuentas incobrables.jpeg' },
+                    { text: 'Reservas técnicas computables (seguros, fianzas, ahorro, capitalización)', href: 'Reservas técnicas computables (seguros, fianzas, ahorro, capitalización).jpeg' },
+                    
+                ],
+            };
+
+            items[type].forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="#" onclick="showImage('${item.href}')">${item.text}</a>`;
+                itemList.appendChild(li);
+            });
+        }
+
+        function showImage(src) {
+            document.getElementById("large-image").src = src;
+            document.getElementById("image-viewer").classList.remove("hidden");
+            document.getElementById("list-section").classList.add("hidden");
+        }
+
+        function filterList() {
+            const search = document.getElementById('search').value.toLowerCase();
+            const items = document.querySelectorAll('#item-list li');
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(search) ? 'list-item' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
